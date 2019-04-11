@@ -14,21 +14,36 @@ code {
 }
 
 #body {
-  border: solid 1px black;
-  height: 30%;
-  width: 7%;
+  height: 168px;
+  width: 110px;
+  margin-top: 25px;
 }
-.container {
-  margin: auto;
-}
+
 #display {
   height: 20px;
   width: 100%;
-  border: solid 1px black;
+  outline: solid 1px black;
 }
 
+.btn-primary {
+  outline: solid 1px black;
+  width: 25%;
+}
+
+.btn-info {
+  outline: solid 1px black;
+  width: 25%;
+}
+.btn-warning {
+  outline: solid 1px black;
+}
+
+.btn-danger {
+  outline: solid 1px black;
+  width: 25%;
+}
 #clear {
-  width: 66%;
+  width: 75%;
 }
 
 #zero {
