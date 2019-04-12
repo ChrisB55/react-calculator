@@ -3,11 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      answer: 0
+    };
+  }
+
   render() {
     return (
       <div id="body" className="container">
         <div className="row">
-          <div id="display"> </div>
+          <div id="display"> {this.state.answer} </div>
         </div>
         <div className="row">
           <button id="clear" className="btn-warning">
