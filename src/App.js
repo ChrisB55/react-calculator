@@ -8,6 +8,13 @@ class App extends Component {
     this.state = {
       answer: 0
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      answer: state.answer + 1
+    }));
   }
 
   render() {
@@ -56,7 +63,7 @@ class App extends Component {
         </div>
 
         <div className="row">
-          <button id="1" className="btn-primary">
+          <button id="1" className="btn-primary" onClick={this.handleClick}>
             1
           </button>
           <button id="2" className="btn-primary">
