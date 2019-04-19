@@ -9,11 +9,18 @@ class App extends Component {
       answer: 0
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleClickClear = this.handleClickClear.bind(this);
   }
 
   handleClick() {
     this.setState(state => ({
       answer: state.answer + 1
+    }));
+  }
+
+  handleClickClear() {
+    this.setState(state => ({
+      answer: 0
     }));
   }
 
@@ -24,7 +31,10 @@ class App extends Component {
           <div id="display"> {this.state.answer} </div>
         </div>
         <div className="row">
-          <button id="clear" className="btn-warning">
+          <button
+            id="clear"
+            className="btn-warning"
+            onClick={this.handleClickClear}>
             AC
           </button>
           <button id="divide" className="btn-danger">
