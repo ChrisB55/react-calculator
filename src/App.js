@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       answer: 0
     };
@@ -33,67 +33,72 @@ class App extends Component {
         <div className="row">
           <button
             id="clear"
+            value="clear"
             className="btn-warning"
             onClick={this.handleClickClear}>
             AC
           </button>
-          <button id="divide" className="btn-danger">
+          <button id="divide" value="/" className="btn-danger">
             {' '}
             /
           </button>
         </div>
         <div className="row">
-          <button id="7" className="btn-primary">
+          <button id="7" value="7" className="btn-primary">
             7
           </button>
-          <button id="8" className="btn-primary">
+          <button id="8" value="8" className="btn-primary">
             8
           </button>
-          <button id="9" className="btn-primary">
+          <button id="9" value="9" className="btn-primary">
             9
           </button>
-          <button id="multiply" className="btn-danger">
+          <button id="multiply" value="*" className="btn-danger">
             X
           </button>
         </div>
 
         <div className="row">
-          <button id="4" className="btn-primary">
+          <button id="4" value="4" className="btn-primary">
             4
           </button>
-          <button id="5" className="btn-primary">
+          <button id="5" value="5" className="btn-primary">
             5
           </button>
-          <button id="6" className="btn-primary">
+          <button id="6" value="6" className="btn-primary">
             6
           </button>
-          <button id="subtract" className="btn-danger">
+          <button id="subtract" value="-" className="btn-danger">
             -
           </button>
         </div>
 
         <div className="row">
-          <button id="1" className="btn-primary" onClick={this.handleClick}>
+          <button
+            id="1"
+            value="1"
+            className="btn-primary"
+            onClick={this.handleClick}>
             1
           </button>
-          <button id="2" className="btn-primary">
+          <button id="2" value="2" className="btn-primary">
             2
           </button>
-          <button id="3" className="btn-primary">
+          <button id="3" value="3" className="btn-primary">
             3
           </button>
-          <button id="add" className="btn-danger">
+          <button id="add" value="+" className="btn-danger">
             +
           </button>
         </div>
         <div className="row">
-          <button id="zero" className="btn-primary">
+          <button id="zero" value="0" className="btn-primary">
             0
           </button>
-          <button id="decimal" className="btn-primary">
+          <button id="decimal" value="." className="btn-primary">
             .
           </button>
-          <button id="equal" className="btn-info">
+          <button id="equal" value="=" className="btn-info">
             =
           </button>
         </div>
