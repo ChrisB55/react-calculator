@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+//import Buttons from './Buttons';
+import Button from './Button';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      answer: 0
-    };
+      answer: []
+    }
     this.handleClick = this.handleClick.bind(this);
     this.handleClickClear = this.handleClickClear.bind(this);
   }
 
-  handleClick() {
-    this.setState(state => ({
-      answer: state.answer + 1
-    }));
+  handleClick(e) {
+    this.setState({
+      answer: [...this.state.answer, e.target.value]
+    });
   }
 
   handleClickClear() {
     this.setState(state => ({
-      answer: 0
+      answer: this.state.answer = []
     }));
   }
-
   render() {
     return (
       <div id="body" className="container">
         <div className="row">
-          <div id="display"> {this.state.answer} </div>
+          <div id="display" placeholder="0"> {this.state.answer} </div>
         </div>
         <div className="row">
           <button
@@ -38,73 +39,50 @@ class App extends Component {
             onClick={this.handleClickClear}>
             AC
           </button>
-          <button id="divide" value="/" className="btn-danger">
-            {' '}
-            /
-          </button>
+          <button id="divide" value="/" className="btn-danger"> /</button>
         </div>
         <div className="row">
-          <button id="7" value="7" className="btn-primary">
-            7
-          </button>
-          <button id="8" value="8" className="btn-primary">
-            8
-          </button>
-          <button id="9" value="9" className="btn-primary">
-            9
-          </button>
-          <button id="multiply" value="*" className="btn-danger">
-            X
-          </button>
-        </div>
+          <button className="btn-primary" id="7" value="7"
+            onClick={this.handleClick}>7 </button>
+          <button className="btn-primary" id="8" value="8"
+            onClick={this.handleClick} >8</button>
+          <button className="btn-primary" id="9" value="9"
+            onClick={this.handleClick}>9 </button>
 
-        <div className="row">
-          <button id="4" value="4" className="btn-primary">
-            4
-          </button>
-          <button id="5" value="5" className="btn-primary">
-            5
-          </button>
-          <button id="6" value="6" className="btn-primary">
-            6
-          </button>
-          <button id="subtract" value="-" className="btn-danger">
-            -
-          </button>
-        </div>
-
-        <div className="row">
-          <button
-            id="1"
-            value="1"
-            className="btn-primary"
-            onClick={this.handleClick}>
-            1
-          </button>
-          <button id="2" value="2" className="btn-primary">
-            2
-          </button>
-          <button id="3" value="3" className="btn-primary">
-            3
-          </button>
-          <button id="add" value="+" className="btn-danger">
-            +
+          <button className="btn-danger" id="multiply" value="*"
+            onClick={this.handleClick}> X
           </button>
         </div>
         <div className="row">
-          <button id="zero" value="0" className="btn-primary">
-            0
-          </button>
-          <button id="decimal" value="." className="btn-primary">
-            .
-          </button>
-          <button id="equal" value="=" className="btn-info">
-            =
-          </button>
+          <button className="btn-primary" id="4" value="4"
+            onClick={this.handleClick}>4 </button>
+          <button className="btn-primary" id="5" value="5"
+            onClick={this.handleClick} >5</button>
+          <button className="btn-primary" type="checkbox" id="6" value="9"
+            onClick={this.handleClick}>6 </button>
+          <button className="btn-danger" id="multiply" value="-"
+            onClick={this.handleClick}> - </button>
+        </div>
+        <div className="row">
+          <button className="btn-primary" id="1" value="1"
+            onClick={this.handleClick}>1 </button>
+          <button className="btn-primary" id="2" value="2"
+            onClick={this.handleClick} >2</button>
+          <button className="btn-primary" type="checkbox" id="3" value="3"
+            onClick={this.handleClick}>3 </button>
+          <button className="btn-danger" id="multiply" value="+"
+            onClick={this.handleClick}> + </button>
+        </div>
+        <div className="row">
+          <button className="btn-primary" id="zero" value="0"
+            onClick={this.handleClick}> 0 </button>
+          <button className="btn-primary" id="decimal" value="."
+            onClick={this.handleClick}> . </button>
+          <button className="btn-info" id="equal" value="="
+            onClick={this.handleClick}> = </button>
         </div>
       </div>
     );
   }
 }
-
 export default App;
