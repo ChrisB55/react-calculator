@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import Buttons from './Buttons';
-import Button from './Button';
+import math from 'mathjs'
 
 class App extends Component {
   constructor(props) {
@@ -11,6 +10,7 @@ class App extends Component {
       answer: []
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleEvaluate = this.handleEvaluate.bind(this);
     this.handleClickClear = this.handleClickClear.bind(this);
   }
 
@@ -18,6 +18,12 @@ class App extends Component {
     this.setState({
       answer: [...this.state.answer, e.target.value]
     });
+  }
+
+  handleEvaluate() {
+    this.setState({
+      answer: math.eval(this.state.answer)
+    })
   }
 
   handleClickClear() {
@@ -53,6 +59,7 @@ class App extends Component {
             onClick={this.handleClick}> X
           </button>
         </div>
+
         <div className="row">
           <button className="btn-primary" id="4" value="4"
             onClick={this.handleClick}>4 </button>
@@ -79,7 +86,7 @@ class App extends Component {
           <button className="btn-primary" id="decimal" value="."
             onClick={this.handleClick}> . </button>
           <button className="btn-info" id="equal" value="="
-            onClick={this.handleClick}> = </button>
+            onClick={this.handleEvaluate}> = </button>
         </div>
       </div>
     );
