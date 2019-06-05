@@ -21,14 +21,18 @@ class App extends Component {
   }
 
   handleEvaluate() {
-    this.setState({
-      answer: math.eval(this.state.answer)
-    })
+    let solution = this.state.answer.join('')
+    if (solution) {
+      solution = math.eval(solution)
+      this.setState({
+        answer: [solution],
+      })
+    }
   }
 
   handleClickClear() {
     this.setState(state => ({
-      answer: this.state.answer = []
+      answer: this.state.answer = [0]
     }));
   }
   render() {
